@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f0a0c6, #89e6eb);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-container {
+        background: rgb(255, 255, 255);
+        padding: 30px;
+        border-radius: 12px;
+        width: 320px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background: #eea5d1;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #2196f3;
+    }
+
+    .message {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .success {
+        color: green;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+
+    <input type="text" id="uname" placeholder="Username">
+    <input type="password" id="pword" placeholder="Password">
+
+    <button onclick="authenticate()">Log In</button>
+
+    <p id="msg" class="message"></p>
+</div>
+
+<script>
+function authenticate(){
+    var username = document.getElementById('uname').value.trim();
+    var password = document.getElementById('pword').value.trim();
+    var msg = document.getElementById('msg');
+
+    if(username === "janedoe" && password === "12345"){
+        msg.className = "message success";
+        msg.textContent = "Login successful";
+    } 
+    else {
+        msg.className = "message error";
+        msg.textContent = "Incorrect username or password";
+    }
+}
+</script>
+
+</body>
+</html>
